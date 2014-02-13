@@ -27,7 +27,7 @@ return array(
   ),
 
   'paths' => array(
-      '^/api/' => array(
+      '^/' => array(
           'allow_origin'=> array('*'),
           'allow_headers'=> array('Content-Type'),
           'allow_methods'=> array('GET'),
