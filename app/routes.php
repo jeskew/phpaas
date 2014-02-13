@@ -18,12 +18,21 @@ Route::get('/', function()
 
 Route::group(array('prefix' => 'api'), function ()
 {
-    Route::get('strtotime/{time}/{format?}', function($time, $format = null)
+    Route::get('strtotime/{time}/{format?}', function ($time, $format = null)
     {
         return Response::json(array(
             'string' => $time,
             'format' => $format,
             'out' => $format ? date($format, strtotime($time)) : strtotime($time)
+        ));
+    });
+
+    Route::get('metaphone/{string}/{phonemes?}', function ($string, $phonemes = 0)
+    {
+        return Response::json(array(
+            'string' => $string,
+            'phonemes' => $phonemes,
+            'out' => metaphone($string, $phonemes)
         ));
     });
 });
