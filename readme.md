@@ -2,7 +2,9 @@
 
 PHP doesn't have many rabid fans these days, but a lot of us miss certain things that PHP did better than JavaScript/Ruby/Java/.NET/etc. This was originally made so that I could have a `strtotime` function in the clouds. So... PHP as a Service.
 
-### Contributing To Laravel
+A demo can be found [here](http://phpaas.aws.af.cm)
+
+### Contributing To PHPaaS
 
 **Knock yourself out.** Miss something from PHP? Open a pull request.
 
