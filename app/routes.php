@@ -16,20 +16,8 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::get('strtotime/{time}/{format?}', function ($time, $format = null)
-{
-    return Response::json(array(
-        'string' => $time,
-        'format' => $format,
-        'out' => $format ? date($format, strtotime($time)) : strtotime($time)
-    ));
-});
+Route::get('strtotime/{time}/{format?}', 'StringController@strtotime');
 
-Route::get('metaphone/{string}/{phonemes?}', function ($string, $phonemes = 0)
-{
-    return Response::json(array(
-        'string' => $string,
-        'phonemes' => $phonemes,
-        'out' => metaphone($string, $phonemes)
-    ));
-});
+Route::get('metaphone/{string}/{phonemes?}', 'StringController@metaphone');
+
+Route::get('levenshtein/{string1}/{string2}', 'StringController@levenshtein');
